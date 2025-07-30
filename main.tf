@@ -112,7 +112,7 @@ module "elb_http" {
     environment = "dev"
   }
 }
-
+# This is to kick off an HCP build
 module "ec2_instances" {
   source = "./modules/aws-instance"
 
