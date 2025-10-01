@@ -2,7 +2,7 @@ terraform {
   # cloud {
   #   organization = "policy-as-code-training"
   #   workspaces {
-  #     name = "policy-test-jrs"
+  #     name = "policy-dev-jrs"
   #   }
   # }
 
@@ -36,7 +36,7 @@ module "vpc" {
 
   tags = {
     project     = "project-alpha",
-    environment = "test"
+    environment = "dev"
   }
 }
 
@@ -44,7 +44,7 @@ module "app_security_group" {
   source  = "terraform-aws-modules/security-group/aws//modules/web"
   version = "3.17.0"
 
-  name        = "web-sg-project-alpha-test"
+  name        = "web-sg-project-alpha-dev"
   description = "Security group for web-servers with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
@@ -52,7 +52,7 @@ module "app_security_group" {
 
   tags = {
     project     = "project-alpha",
-    environment = "test"
+    environment = "dev"
   }
 }
 
@@ -60,7 +60,7 @@ module "lb_security_group" {
   source  = "terraform-aws-modules/security-group/aws//modules/web"
   version = "3.17.0"
 
-  name        = "lb-sg-project-alpha-test"
+  name        = "lb-sg-project-alpha-dev"
   description = "Security group for load balancer with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
@@ -68,7 +68,7 @@ module "lb_security_group" {
 
   tags = {
     project     = "project-alpha",
-    environment = "test"
+    environment = "dev"
   }
 }
 
@@ -82,7 +82,7 @@ module "elb_http" {
   version = "2.4.0"
 
   # Ensure load balancer name is unique
-  name = "lb-${random_string.lb_id.result}-project-alpha-test"
+  name = "lb-${random_string.lb_id.result}-project-alpha-dev"
 
   internal = false
 
@@ -109,7 +109,7 @@ module "elb_http" {
 
   tags = {
     project     = "project-alpha",
-    environment = "test"
+    environment = "dev"
   }
 }
 # This is to kick off an HCP build
@@ -123,6 +123,6 @@ module "ec2_instances" {
 
   tags = {
     project     = "project-alpha",
-    environment = "test"
+    environment = "dev"
   }
 }
