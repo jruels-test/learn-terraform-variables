@@ -4,7 +4,7 @@ terraform {
     workspaces {
       name = "tf-vault-qa-jrs"
     } */
-  } 
+
 
   required_providers {
     aws = {
