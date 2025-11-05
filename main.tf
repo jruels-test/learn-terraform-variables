@@ -1,11 +1,10 @@
 terraform {
- /*  cloud {
+  /* cloud {
     organization = "policy-as-code-training"
     workspaces {
-      name = "policy-autoapprove-jrs"
-      project = "policy-as-code"
-    }
-  } */
+      name = "tf-vault-qa-jrs"
+    } */
+  } 
 
   required_providers {
     aws = {
