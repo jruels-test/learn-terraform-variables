@@ -137,7 +137,7 @@ resource "aws_ebs_volume" "unencrypted" {
 
 module "terraform-aws-s3-bucket-jrs" {
   source  = "app.terraform.io/policy-as-code-training/terraform-aws-s3-bucket-jrs/aws"
-  version = "4.0.0"
+  version = "5.0.0"
   # insert required variables here
   bucket_name = "jrs-s3-aws-module-20251105"
 }
