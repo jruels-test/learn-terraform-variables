@@ -136,6 +136,6 @@ resource "aws_ebs_volume" "unencrypted" {
 }
 
 module "s3_bucket" {
-  bucket = "tf-module-aws-jrs"
+  bucket_name = "tf-module-aws-jrs"
   source  = "app.terraform.io/policy-as-code-training/tf-module-aws-jrs/aws"
 }
