@@ -1,10 +1,5 @@
 terraform {
-
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
+  # required_providers configuration removed - managed by HCP Terraform
 }
 
 provider "aws" {
