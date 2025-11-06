@@ -1,5 +1,10 @@
 terraform {
-  # required_providers configuration removed - managed by HCP Terraform
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0.0"
+    }
+  }
 }
 
 provider "aws" {
