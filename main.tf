@@ -31,7 +31,7 @@ module "vpc" {
 
   tags = {
     project     = "project-alpha",
-    environment = "autoapprove"
+    environment = "development"
   }
 }
 
@@ -47,7 +47,7 @@ module "app_security_group" {
 
   tags = {
     project     = "project-alpha",
-    environment = "autoapprove"
+    environment = "development"
   }
 }
 
@@ -72,7 +72,7 @@ module "lb_security_group" {
   ]
   tags = {
     project     = "project-alpha",
-    environment = "autoapprove"
+    environment = "development"
   }
 }
 
@@ -113,7 +113,7 @@ module "elb_http" {
 
   tags = {
     project     = "project-alpha",
-    environment = "autoapprove"
+    environment = "development"
   }
 }
 # This is to kick off an autoapprove build
@@ -127,7 +127,7 @@ module "ec2_instances" {
 
   tags = {
     project     = "project-alpha",
-    environment = "autoapprove"
+    environment = "development"
   }
 }
 resource "aws_ebs_volume" "unencrypted" {
