@@ -136,10 +136,9 @@ resource "aws_ebs_volume" "unencrypted" {
   encrypted         = true # Intentional violation: unencrypted EBS volume
 }
 
-module "terraform-aws-s3-bucket-jrs" {
-  source  = "app.terraform.io/policy-as-code-training/terraform-aws-s3-bucket-jrs/aws"
-  version = "5.5.0"
-  # insert required variables here
-  bucket_name = "jrs-s3-aws-module-20251105"
+module "s3-bucket-jrs1" {
+  source  = "app.terraform.io/policy-as-code-training/s3-bucket-jrs1/aws"
+  version = "1.0.0"
+  bucket_name = "jrs-20251119"
 }
 # Trigger run
