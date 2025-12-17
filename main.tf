@@ -1,4 +1,10 @@
 terraform {
+   /* cloud {
+    organization = "policy-as-code-training"
+    workspaces {
+      name = "tf-vault-qa-jrs"
+    }
+  } */
   
   required_providers {
     aws = {
@@ -136,9 +142,9 @@ resource "aws_ebs_volume" "unencrypted" {
   encrypted         = true # Intentional violation: unencrypted EBS volume
 }
 
-module "s3-bucket-jrs1" {
+/* module "s3-bucket-jrs1" {
   source  = "app.terraform.io/policy-as-code-training/s3-bucket-jrs1/aws"
   version = "1.0.0"
   bucket_name = "jrs-20251119"
 }
-# Trigger run
+# Trigger run */
